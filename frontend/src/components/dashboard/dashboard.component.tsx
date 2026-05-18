@@ -73,14 +73,6 @@ const DashboardComponent = () => {
     : [];
 
   return (
-    <div className="space-y-6">
-      {data && <DashboardAnalysisHeader data={data} />}
-      {data && (
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <UsersPieChart data={data.users} />
-          <SubscriptionChart data={data.subscriptionTypes} />
-          <PostsPerMonthChart perMonth={data.posts.perMonth} />
-          <TopicsChart topics={data.posts.topics} />
     <div className="space-y-8">
       {/* HERO SECTION */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0f1c3a] via-[#0d1a3a] to-[#111433] border border-white/[0.07] p-8 shadow-2xl">

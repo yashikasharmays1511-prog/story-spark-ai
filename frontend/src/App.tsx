@@ -35,7 +35,6 @@ import AboutUsComponent from "./components/footer/about-us.tsx";
 import CareerComponent from "./components/footer/career.tsx";
 import ContactUsComponent from "./components/footer/contact-us.tsx";
 import BlogComponent from "./components/footer/blog.tsx";
-import HelpCenterComponent from "./components/footer/help-center.tsx";
 import GuidelinesComponent from "./components/footer/guidelines.tsx";
 import TemplatesComponent from "./components/templates/templates.component";
 import CommunityComponent from "./components/community/community.component";
@@ -222,6 +221,8 @@ function App() {
             </RootLayout>
           }
         />
+
+        <Route
           path="/bookmarks"
           element={
             <ProtectedRoute
@@ -239,6 +240,7 @@ function App() {
             />
           }
         />
+
         <Route
           path="/community"
           element={
@@ -255,7 +257,6 @@ function App() {
         <Route path="/blog" element={<RootLayout><BlogComponent /></RootLayout>} />
         <Route path="/help-center" element={<RootLayout><HelpCenterComponent /></RootLayout>} />
         <Route path="/guidelines" element={<RootLayout><GuidelinesComponent /></RootLayout>} />
-        <Route path="/community" element={<RootLayout><CommunityComponent /></RootLayout>} />
         <Route path="*" element={<RootLayout><NotFoundComponent /></RootLayout>} />
       </Routes>
 
