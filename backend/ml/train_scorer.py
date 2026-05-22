@@ -25,7 +25,9 @@ from scorer import build_model, MAX_VOCAB, MAX_LEN, SAVE_DIR
 
 TRANSITION_WORDS = {
     "however", "therefore", "meanwhile", "suddenly", "consequently",
-    "furthermore", "although", "nevertheless", "afterward", "previously",
+    "furthermore", "although", "nevertheless", "afterward", "previously", "but", "yet", "so",
+    "because", "since", "though", "while", "unless", "until",
+    "still", "instead", "otherwise", "hence", "thus", "also",
 }
 CREATIVE_WORDS = {
     "whispered", "shimmered", "cascaded", "trembled", "unfurled",
@@ -70,6 +72,29 @@ PROMPT_SEEDS = [
     "a painter falls in love with their subject",
     "a musician loses their hearing before a concert",
     "a letter arrives addressed to someone long dead",
+    "two enemies in school fall in love ten years later",
+    "a girl and boy meet at a coffee shop every morning",
+    "childhood best friends reunite after years apart",
+    "a love letter found in an old book changes everything",
+    "two people stuck in an elevator confess their feelings",
+    "rivals in college become something more after graduation",
+    "a wrong number text leads to an unexpected romance",
+    "a journalist uncovers a conspiracy that goes too deep",
+    "a woman wakes up with no memory of the last year",
+    "a small town hides a secret that nobody talks about",
+    "a detective realizes the killer is someone they trust",
+    "a phone rings in an abandoned house at midnight",
+    "a girl discovers she can hear other peoples thoughts",
+    "the last human on earth finds a signal from space",
+    "a boy finds a map that leads to a parallel world",
+    "magic is discovered to be real but only for one day",
+    "a robot learns what it means to feel lonely",
+    "a father writes letters to his daughter he never met",
+    "an old woman revisits the town she left fifty years ago",
+    "a teenager finds their late mothers diary in the attic",
+    "two friends drift apart and meet again at a funeral",
+    "a man quits his job to chase a dream he abandoned",
+    "a child asks why the stars disappear in the morning",
 ]
 
 def random_story(prompt: str, quality: str = "medium") -> str:
