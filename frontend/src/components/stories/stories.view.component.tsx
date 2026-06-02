@@ -1252,7 +1252,7 @@ const StoriesViewComponent: React.FC<StoriesComponentProps> = ({
           title={selectedStory.title}
           selectedStory={selectedStory}
           onClose={() => setShowRemix(false)}
-          onApplyRemix={(content) => {
+          onApplyRemix={(content: string) => {
             const updatedStory = { ...selectedStory, content };
             setSelectedStory(updatedStory);
             setStories(stories.map((story) => (story.uuid === selectedStory.uuid ? updatedStory : story)));
