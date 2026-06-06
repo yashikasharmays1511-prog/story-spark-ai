@@ -15,12 +15,11 @@ import { postSearchFields } from "./post.constant";
 import { SortOrder, Types } from "mongoose";
 import { GamificationService } from "../gamification/gamification.service";
 
-
+const MAX_SEARCH_TERM_LENGTH = 100;
 
 const escapeRegex = (text: string): string => {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
-const MAX_SEARCH_TERM_LENGTH = 100;
 
 interface ICursorPayload {
   value: string;
@@ -195,7 +194,6 @@ const getPosts = async (
 
   const countCondition = andCondition.length > 0 ? { $and: andCondition } : {};
 
-  // sort condition
   const sortCondition: { [key: string]: SortOrder } = {};
   if (sortFilter === "mostPopular") {
     sortCondition.likesCount = -1;
@@ -404,7 +402,6 @@ const toggleBookmark = async (postId: string, token: ITokenPayload) => {
   const post = await Post.findOne({ _id: postId, isDeleted: { $ne: true } });
 
   if (!post) {
-
     throw new ApiError(httpStatus.BAD_REQUEST, "Post not found!");
   }
 
@@ -453,7 +450,6 @@ const updatePost = async (
     throw new ApiError(httpStatus.NOT_FOUND, "Post not found!");
   }
 
-  // Enforce ownership
   if (
     post.author.toString() !== user._id.toString() &&
     user.role !== "admin" &&
@@ -462,7 +458,6 @@ const updatePost = async (
     throw new ApiError(httpStatus.FORBIDDEN, "You do not have permission to edit this story!");
   }
 
-  // Automatically create version snapshot of the current state BEFORE overwriting
   await StoryVersionService.createVersionSnapshot(
     postId,
     user._id.toString(),
@@ -470,7 +465,6 @@ const updatePost = async (
     payload.generationType || "edited"
   );
 
-  // Overwrite post content
   if (payload.title !== undefined) post.title = payload.title;
   if (payload.content !== undefined) post.content = payload.content;
   if (payload.tag !== undefined) post.tag = payload.tag;
@@ -513,7 +507,6 @@ const deletePost = async (postId: string, token: ITokenPayload) => {
     await user.save();
   }
 
-  // Clean up associated bookmarks when story post is soft-deleted
   await Bookmark.deleteMany({ storyId: postId });
 
   return post;
@@ -594,7 +587,7 @@ export const PostService = {
   toggleBookmark,
   updatePost,
   deletePost,
-  remixStory,       // Exposed service for AI story variations
-  translateStory,   // Exposed service for localized modifications
+  remixStory,
+  translateStory,
   getGenres,
 };
