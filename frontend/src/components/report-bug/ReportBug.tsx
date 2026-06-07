@@ -14,7 +14,9 @@ import {
   MessageSquare,
   ClipboardList,
   Target,
-  FileWarning
+  FileWarning,
+  Image as ImageIcon,
+  X
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
