@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import getRazorpay from "../config/razorpay";
+import { getRazorpay } from "../config/razorpay";
 import crypto from "crypto";
 import { Order } from "../app/modules/payment/order.model";
 import { User } from "../app/modules/user/user.model";
