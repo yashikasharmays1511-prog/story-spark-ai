@@ -375,10 +375,12 @@ const SignUpComponent = () => {
                       return (
                         <li
                           key={key}
-                          className={`flex items-center gap-2 ${met ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400 dark:text-slate-600"}`}
+                          className={`flex items-center gap-2 ${met ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400 dark:text-slate-500"}`}
                           aria-label={`${label}: ${met ? "met" : "not met"}`}
                         >
-                          <i className={`fa-solid ${met ? "fa-circle-check" : "fa-circle-xmark"} text-xs shrink-0`} aria-hidden="true" />
+                          <span className="text-xs font-bold shrink-0 select-none" aria-hidden="true">
+                            {met ? "\u2713" : "\u2715"}
+                          </span>
                           <span>{label}</span>
                         </li>
                       );
