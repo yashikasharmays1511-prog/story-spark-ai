@@ -14,11 +14,16 @@ function Navbar() {
       {/* Left Side: Brand Text */}
       <div className="navbar-left">
         <Link
-        to="/"
-        className="logo-brand-text"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          to="/"
+          className="logo-brand-text"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          Spark-Story-AI
+          <img
+            src="/storysparkai2.png"
+            alt="StorySparkAI Logo"
+            className="navbar-logo"
+          />
+          <span>StorySparkAI</span>
         </Link>
       </div>
 
