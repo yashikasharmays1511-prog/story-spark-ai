@@ -55,7 +55,7 @@
 
 ### Local development (monorepo)
 
-**Prerequisites:** Node.js **18.18+**, npm **9+**, MongoDB URI for the API.
+**Prerequisites:** Node.js **18.18+**, pnpm **8+**, MongoDB URI for the API.
 
 1. **Clone the repository**
 
@@ -102,9 +102,9 @@
 6. **Production builds**
 
    ```bash
-   npm run build
-   npm run start:backend    # requires `npm run build:backend` first
-   npm run start:frontend   # serves built static app (preview)
+   pnpm run build
+   pnpm run start:backend    # requires `pnpm run build:backend` first
+   pnpm run start:frontend   # serves built static app (preview)
    ```
 
 ### Deploying on Vercel
@@ -241,9 +241,8 @@ VITE_GOOGLE_CLIENT_ID=your-google-client-id
 
 
 <a id="contributing"></a>
-## Troubleshooting 🛠️
 
-Running into issues during setup? Here are the most common errors and how to fix them.
+## Contributing 👨‍💻
 
 ---
 
@@ -302,10 +301,10 @@ Once the update completes, click **Try Again** in Docker Desktop. If the issue p
 ```bash
 pnpm install
 ```
-Then commit the updated `package-lock.json` before rebuilding your Docker image:
+Then commit the updated `pnpm-lock.yaml` before rebuilding your Docker image:
 ```bash
-git add package-lock.json
-git commit -m "chore: regenerate package-lock.json"
+git add pnpm-lock.yaml
+git commit -m "chore: regenerate pnpm-lock.yaml"
 ```
 
 ---
