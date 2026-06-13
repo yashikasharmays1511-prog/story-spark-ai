@@ -373,9 +373,7 @@ export default function Contact() {
           </span>
         </div>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14 xl:gap-20">
-
-          {/* ΓöÇΓöÇ LEFT COLUMN ΓöÇΓöÇ */}
+<div className="grid items-start gap-10 lg:grid-cols-1 xl:grid-cols-2 lg:gap-14 xl:gap-20 max-w-4xl mx-auto">          {/* ΓöÇΓöÇ LEFT COLUMN ΓöÇΓöÇ */}
           <div
             className={`contact-col-left flex flex-col transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
@@ -479,10 +477,10 @@ export default function Contact() {
           </div>
 
           {/* ΓöÇΓöÇ RIGHT COLUMN ΓÇö FORM ΓöÇΓöÇ */}
-          <div
-            className={`contact-col-right w-full lg:sticky lg:top-24 transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-          >
+         <div
+  className={`contact-col-right w-full max-w-2xl mx-auto transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+    }`}
+>
             <div className="contact-form-shell">
               <div aria-hidden="true" className="contact-form-glow-ring" />
 
