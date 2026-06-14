@@ -59,6 +59,7 @@ const LoginComponent = () => {
     }
   };
 
+
   const handleGoogleLoginSuccess = async (
     credentialResponse: CredentialResponse
   ) => {
@@ -70,9 +71,7 @@ const LoginComponent = () => {
 
       if (res.data.accessToken) {
         toast.success("User logged in successfully with Google!");
-        storeUserInfo({
-          accessToken: res.data.accessToken,
-        });
+        storeUserInfo({ accessToken: res.data.accessToken });
         setIsLoggedIn(true);
       }
     } catch {
@@ -93,6 +92,9 @@ const LoginComponent = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-[#0B1120] text-slate-900 dark:text-slate-100 flex items-center justify-center relative overflow-hidden p-4 sm:p-8 box-border overflow-x-hidden">
       {/* Background Glow */}
+
+      <motion.div
+
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
 
@@ -229,12 +231,15 @@ const LoginComponent = () => {
           <div className="mt-6 relative w-full">
             <div className="absolute inset-0 flex items-center w-full">
               <div className="w-full border-t border-slate-200 dark:border-slate-700" />
+
             </div>
             <div className="relative flex justify-center text-sm w-full">
               <span className="px-4 bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
                 OR
               </span>
             </div>
+
+
           </div>
 
           <div className="mt-6 flex flex-col items-center w-full min-w-0">
